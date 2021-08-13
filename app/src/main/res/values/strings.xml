@@ -9,6 +9,21 @@
     <string name="bvn5">à une clef de chiffrement.</string>
     <string name="bvn6">Amusez-vous bien! </string>
     <string name="bouton_lancer">Utiliser le transcodeur! </string>
+    <string name="txt_encoder">texte à ENcoder</string>
+    <string name="txt_decoder">texte à DEcoder</string>
+    <string name="txt_clef">clef - générer en une si vous n\'en avez pas</string>
+    <string name="tooltip_encoder">Entrez ici le message que vous voulez encoder</string>
+    <string name="tooltip_decoder">Entrez ici le message déjà encodé que vous voulez décrypter</string>
+    <string name="tooltip_clef">Mettez votre clef de chiffrement ici, ou générez en une</string>
+    <string name="boutonGenerer">Générer une clef</string>
+    <string name="boutonSauver">Sauvegarder la clef</string>
+    <string name="entrerNom">Entrez le nom de votre clef</string>
+    <string name="titreEntrerNom">Nom de la clef</string>
+    <string name="sauver">Sauver</string>
+    <string name="annuler">Annuler</string>
+    <string name="OK">OK</string>
+    <string name="titreNomVide">Nom vide</string>
+    <string name="nomVide">Vous devez entrer un nom pour pouvoir enregistrer votre clef</string>
 
 
 </resources>
