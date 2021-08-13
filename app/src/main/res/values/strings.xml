@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">LeTranscodeur</string>
+    <string name="loualInd">le transcodeur</string>
+    <string name="trns_logo">Par LouAl Industries</string>
+    <string name="bvn">Bienvenue dans le Transcodeur</string>
+    <string name="bvn2">Version mobile.</string>
+    <string name="bvn3">Cette petite application vous permet</string>
+    <string name="bvn4">de chiffrer vos messages grâce</string>
+    <string name="bvn5">à une clef de chiffrement.</string>
+    <string name="bvn6">Amusez-vous bien! </string>
+    <string name="bouton_lancer">Utiliser le transcodeur! </string>
+
+
+</resources>
