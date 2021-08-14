@@ -24,6 +24,7 @@
     <string name="OK">OK</string>
     <string name="titreNomVide">Nom vide</string>
     <string name="nomVide">Vous devez entrer un nom pour pouvoir enregistrer votre clef</string>
+<!--    <string name="baseClef">BaseClef</string>-->
 
 
 </resources>
