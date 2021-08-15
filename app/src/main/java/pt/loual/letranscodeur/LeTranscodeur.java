@@ -133,7 +133,8 @@ public class LeTranscodeur extends AppCompatActivity {
                 chmpDecode.setText(champNom.getText().toString());
             }
         })
-        .setNegativeButton(R.string.annuler, (dialogInterface, i) -> dialogInterface.dismiss());
+        .setNegativeButton(R.string.annuler, (dialogInterface, i) -> dialogInterface.dismiss())
+                .show();
     }
 
 
