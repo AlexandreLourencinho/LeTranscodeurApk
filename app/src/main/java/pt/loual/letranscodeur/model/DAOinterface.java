@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public interface DAOinterface<T> {
 
-    HashMap<Boolean,Object> ajouter(T o);
+    HashMap<Boolean,String> ajouter(T o);
     HashMap<Boolean,Object> modifier(T o);
     HashMap<Boolean,Object> supprimer(T o);
     ArrayList<T> liste();

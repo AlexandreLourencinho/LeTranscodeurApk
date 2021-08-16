@@ -44,4 +44,9 @@ public class Clefs {
     public void setContenu(String contenu) {
         this.contenu = contenu;
     }
+
+    @Override
+    public String toString() {
+        return this.nom;
+    }
 }

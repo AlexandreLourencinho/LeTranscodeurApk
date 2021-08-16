@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/80010-02-06/Desktop/dossiers_de_depots/LeTranscodeurApk/app/src/main/res/layout/activity_le_transcodeur.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/alex/Desktop/depots/letranscodeurmobile/app/src/main/res/layout/activity_accueil_transcodeur.xml" value="0.19635416666666666" />
         <entry key="..\:/Users/alex/Desktop/depots/letranscodeurmobile/app/src/main/res/layout/activity_le_transcodeur.xml" value="0.19635416666666666" />
         <entry key="..\:/Users/alex/Desktop/depots/letranscodeurmobile/app/src/main/res/layout/activity_main.xml" value="0.18229166666666666" />
@@ -10,7 +11,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

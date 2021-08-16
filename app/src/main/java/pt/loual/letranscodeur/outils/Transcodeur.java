@@ -17,6 +17,16 @@ public class Transcodeur {
     //tableau permettant l'encodage
     private HashMap<Character, String> tableauEncode = new HashMap<>();
 
+    public HashMap<String, Character> getTableauDecode()
+    {
+        return tableauDecode;
+    }
+
+    public HashMap<Character, String> getTableauEncode()
+    {
+        return tableauEncode;
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public Transcodeur(String clef)
     {
