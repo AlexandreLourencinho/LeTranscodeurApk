@@ -27,6 +27,22 @@ public class Transcodeur {
         return tableauEncode;
     }
 
+
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public Boolean testTranscodeur(String clef, Boolean bool){
+        String clearKey = BoiteAEncryptage.decrypt(clef);
+        if(clearKey==null){
+            return false;
+        }else {
+            return true;
+        }
+    }
+
+    public Transcodeur()
+    {
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public Transcodeur(String clef)
     {

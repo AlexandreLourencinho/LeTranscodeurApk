@@ -1,5 +1,5 @@
 <resources>
-<!--    <string name=""></string>-->
+    <!--    <string name=""></string>-->
     <string name="app_name">LeTranscodeur</string>
     <string name="loualInd">le transcodeur</string>
     <string name="trns_logo">Par LouAl Industries</string>
@@ -25,7 +25,7 @@
     <string name="OK">OK</string>
     <string name="titreNomVide">Nom vide</string>
     <string name="nomVide">Vous devez entrer un nom pour pouvoir enregistrer votre clef</string>
-<!--    <string name="baseClef">BaseClef</string>-->
+    <!--    <string name="baseClef">BaseClef</string>-->
     <string name="erreurInsertion">La clef n\'a pas pu être sauvegardée.</string>
     <string name="titreErreurInsertion">Erreur DAO-I</string>
     <string name="reussiteInsertion">La clef a été correctement sauvegardée.</string>
@@ -34,8 +34,8 @@
     <string name="erreurClefVide">Il n\'y a pas de clef valide dans le champ correspondant !</string>
     <string name="titreClefInvalide">Erreur de clef - iv</string>
     <string name="messageClefInvalide">La clef n\'est pas dans un format valide</string>
-<!--    <string name=""></string>-->
-
+    <string name="gestionClefs">Gestion des clefs</string>
+    <!--    <string name=""></string>-->
 
 
 </resources>

@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LeTranscodeur">
         <activity
-            android:name=".LeTranscodeur"
-            android:parentActivityName=".AccueilTranscodeur"
+            android:name=".GestionClefs"
+            android:parentActivityName=".LeTranscodeur"
             android:exported="true" />
+        <activity
+            android:name=".LeTranscodeur"
+            android:exported="true"
+            android:parentActivityName=".AccueilTranscodeur" />
         <activity
             android:name=".AccueilTranscodeur"
             android:exported="true" />
