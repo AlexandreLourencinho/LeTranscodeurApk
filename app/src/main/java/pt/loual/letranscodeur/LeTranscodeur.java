@@ -127,7 +127,8 @@ public class LeTranscodeur extends AppCompatActivity
                     chmpClair.setEnabled(false);//--------------------------------------------------------------||
                     chmpCrypte.setEnabled(false);//-------------------------------------------------------------||
                 } else {//--------------------------------------------------------------------------------------||
-                    if (!LeTranscodeur.this.testClef(chmpClef.getText().toString())) {//------------------------||
+                    Outils test = new Outils();
+                    if (!test.testClef(chmpClef.getText().toString())) {//------------------------||
                         chmpClair.setText("");//----------------------------------------------------------------||
                         chmpClair.setEnabled(false);//----------------------------------------------------------||
                         chmpCrypte.setEnabled(false);//---------------------------------------------------------||
@@ -235,7 +236,8 @@ public class LeTranscodeur extends AppCompatActivity
             @Override//
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)//
             {//
-                if (chmpClef.getText().toString().equals("") || !testClef(chmpClef.getText().toString()) ) {//
+                Outils test = new Outils();
+                if (chmpClef.getText().toString().equals("") || !test.testClef(chmpClef.getText().toString()) ) {//
                     desactiver();
                 } else {//
                     activer();
@@ -304,7 +306,8 @@ public class LeTranscodeur extends AppCompatActivity
             alerte.alerteuh(LeTranscodeur.this, R.string.titreErreurClefVide,//
                     R.string.erreurClefVide, R.string.OK);//
         } else {//
-            if (!testClef(chmpClef.getText().toString())) {//
+            Outils test = new Outils();
+            if (!test.testClef(chmpClef.getText().toString())) {//
                 Outils alerte = new Outils();//
                 alerte.alerteuh(LeTranscodeur.this, R.string.titreClefInvalide, R.string.messageClefInvalide, R.string.OK);//
             } else {//
@@ -352,21 +355,7 @@ public class LeTranscodeur extends AppCompatActivity
     }//
     //
 
-    /**
-     * @param clef
-     * @return
-     */
-    @RequiresApi(api = Build.VERSION_CODES.O)//
-    public Boolean testClef(String clef)//
-    {//
-        Transcodeur transverif = new Transcodeur();//
-        if (transverif.testTranscodeur(clef, true)) {//
-            return true;//
-        } else {//
-            return false;//
-        }//
-    }//
-//
+
 
 
     /**

@@ -35,6 +35,10 @@
     <string name="titreClefInvalide">Erreur de clef - iv</string>
     <string name="messageClefInvalide">La clef n\'est pas dans un format valide</string>
     <string name="gestionClefs">Gestion des clefs</string>
+        <string name="modifier">Modifier</string>
+        <string name="supprimer">Supprimer</string>
+<!--        <string name=""></string>-->
+<!--        <string name=""></string>-->
     <!--    <string name=""></string>-->
 
 

@@ -4,7 +4,10 @@ import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.os.Build;
 import android.widget.EditText;
+
+import androidx.annotation.RequiresApi;
 
 import pt.loual.letranscodeur.LeTranscodeur;
 import pt.loual.letranscodeur.R;
@@ -28,4 +31,20 @@ public class Outils
                 .setNeutralButton(bouton, ((dialogInterface, i) ->dialogInterface.dismiss()))
                 .show();
     }
+
+    /**
+     * @param clef
+     * @return
+     */
+    @RequiresApi(api = Build.VERSION_CODES.O)//
+    public Boolean testClef(String clef)//
+    {//
+        Transcodeur transverif = new Transcodeur();//
+        if (transverif.testTranscodeur(clef, true)) {//
+            return true;//
+        } else {//
+            return false;//
+        }//
+    }//
+//
 }
