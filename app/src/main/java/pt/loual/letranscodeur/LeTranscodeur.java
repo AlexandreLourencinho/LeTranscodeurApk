@@ -47,8 +47,6 @@ public class LeTranscodeur extends AppCompatActivity
     private ImageButton boutonSauverClef;
     private EditText champNom;
     private Spinner spinnerClefs;
-    private ArrayList<Clefs> arrayListClefs;
-    private ArrayAdapter<Clefs> adapterListeClefs;
     private ImageButton copieClair;
     private ImageButton copieCrypte;
     private ImageButton copieClef;
@@ -63,6 +61,7 @@ public class LeTranscodeur extends AppCompatActivity
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
@@ -84,6 +83,8 @@ public class LeTranscodeur extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        Outils outils = new Outils();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_le_transcodeur);
         //||-------------------------------------------------------||
@@ -111,7 +112,9 @@ public class LeTranscodeur extends AppCompatActivity
         //------------------------------------------------------------------||
         BaseClefs bdd = new BaseClefs(this);//----------------------||
         bdd.creerDefaut();//------------------------------------------------||
-        menuSelection();//--------------------------------------------------||
+        spinnerClefs = outils.menuSelection(spinnerClefs, LeTranscodeur.this);//--------------------------------------------------||
+        registerForContextMenu(spinnerClefs);//
+        spinnerClefs.setSelection(0);
         //------------------------------------------------------------------||
 
 
@@ -169,9 +172,14 @@ public class LeTranscodeur extends AppCompatActivity
                     }//
                     else {//
                         activer();
-                        System.out.println(chmpClef.getText().toString());//
-                        trans = new Transcodeur(chmpClef.getText().toString());//
-                        chmpCrypte.setText(trans.encode(chmpClair.getText().toString()));//
+//                        System.out.println(chmpClef.getText().toString());//
+                        StringBuilder sb = new StringBuilder();
+                        for(String ligne : chmpClair.getText().toString().split("\n")){
+                            trans = new Transcodeur(chmpClef.getText().toString());//
+                            sb.append(ligne);
+                            chmpCrypte.setText(trans.encode(sb.toString()));//
+                        }
+
                     }//
                 }
             }//
@@ -205,8 +213,13 @@ public class LeTranscodeur extends AppCompatActivity
                         desactiver();
                     } else {//
                         activer();
-                        trans = new Transcodeur(chmpClef.getText().toString());//
-                        chmpClair.setText(trans.decode(chmpCrypte.getText().toString()));//
+                        StringBuilder sb = new StringBuilder();
+                        for( String ligne : chmpCrypte.getText().toString().split("")){
+                            trans = new Transcodeur(chmpClef.getText().toString());//
+                            sb.append(ligne);
+                            chmpClair.setText(trans.decode(sb.toString()));//
+                        }
+
                     }//
                 }//
             }//
@@ -344,7 +357,7 @@ public class LeTranscodeur extends AppCompatActivity
                                     Outils alarme = new Outils();//
                                     alarme.alerteuh(LeTranscodeur.this, R.string.titreReussiteInsertion, R.string.reussiteInsertion, R.string.OK);//
                                     //
-                                    menuSelection();//
+                                    alarme.menuSelection(spinnerClefs, LeTranscodeur.this);//
                                 }//
                             }//
                         })//
@@ -388,20 +401,6 @@ public class LeTranscodeur extends AppCompatActivity
     }//
 
 
-    /**
-     *
-     */
-    public void menuSelection()//
-    {//
-        BaseClefs bdd = new BaseClefs(LeTranscodeur.this);//
-        arrayListClefs = bdd.liste();//
-        adapterListeClefs = new ArrayAdapter<>(LeTranscodeur.this, //
-                android.R.layout.simple_list_item_1, android.R.id.text1, this.arrayListClefs);//
-        spinnerClefs.setAdapter(adapterListeClefs);//
-        registerForContextMenu(spinnerClefs);//
-        spinnerClefs.setSelection(0);//
-    }//
-    //
 
 
     /**
@@ -410,9 +409,11 @@ public class LeTranscodeur extends AppCompatActivity
     public void desactiver()//
     {//
         chmpClair.setEnabled(false);//
-        chmpClair.setBackgroundResource(R.color.grey_600);//
+        chmpClair.setBackgroundResource(R.color.grey_200);//
         chmpCrypte.setEnabled(false);//
-        chmpCrypte.setBackgroundResource(R.color.grey_600);//
+        chmpCrypte.setBackgroundResource(R.color.grey_200);//
+        chmpCrypte.setHint(R.string.conseilCrypt);
+        chmpClair.setHint(R.string.conseilClair);
     }//
     //
 
@@ -425,6 +426,8 @@ public class LeTranscodeur extends AppCompatActivity
         chmpClair.setBackgroundResource(R.color.white);//
         chmpCrypte.setEnabled(true);//
         chmpCrypte.setBackgroundResource(R.color.white);//
+        chmpCrypte.setHint(R.string.vide);
+        chmpClair.setHint(R.string.vide);
     }//
     //
 }

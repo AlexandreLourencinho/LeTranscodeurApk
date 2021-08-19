@@ -35,11 +35,31 @@
     <string name="titreClefInvalide">Erreur de clef - iv</string>
     <string name="messageClefInvalide">La clef n\'est pas dans un format valide</string>
     <string name="gestionClefs">Gestion des clefs</string>
-        <string name="modifier">Modifier</string>
-        <string name="supprimer">Supprimer</string>
-<!--        <string name=""></string>-->
-<!--        <string name=""></string>-->
-    <!--    <string name=""></string>-->
+    <string name="modifier">Modifier</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="conseilClair">La clef n\'est pas valide, vous ne pouvez décoder ou encoder des messages.</string>
+    <string name="conseilCrypt">Entrez une clef valide ou générez en une pour pouvoir utiliser l\'application.</string>
+    <string name="vide" />
+    <string name="titreErreurModif">Erreur DAO-M-GC</string>
+    <string name="messageErreurModif">Il y a eu une erreur lors de la modification de la clef.</string>
+    <string name="titreReussiteModif">Clef modifiée!</string>
+    <string name="messageReussiteModif">La clef à bien été modifiée!</string>
+    <string name="titreErreurSuppression">Erreur DAO-S-GC</string>
+    <string name="messageErreurSuppression">Il y a eu une erreur lors de la tentative de supression.</string>
+            <string name="titreSuppressionReussie">Suppression de la clef réussie!</string>
+            <string name="messageSuppressionReussie">Vous avez supprimé la clef !</string>
+<!--            <string name=""></string>-->
+<!--            <string name=""></string>-->
+    <!--        <string name=""></string>-->
+    <!--        <string name=""></string>-->
+    <!--        <string name=""></string>-->
+    <!--        <string name=""></string>-->
+    <!--        <string name=""></string>-->
+    <!--        <string name=""></string>-->
+    <!--        <string name=""></string>-->
+    <!--        <string name=""></string>-->
+    <!--        <string name=""></string>-->
+    <!--        <string name=""></string>-->
 
 
 </resources>

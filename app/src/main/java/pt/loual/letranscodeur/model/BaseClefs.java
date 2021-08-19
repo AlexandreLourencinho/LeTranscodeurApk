@@ -78,7 +78,7 @@ public class BaseClefs extends SQLiteOpenHelper implements DAOinterface<Clefs> {
             ContentValues valeurs = new ContentValues();
             valeurs.put(COLONNE_NOM,o.getNom());
             valeurs.put(COLONNE_CONTENU,o.getContenu());
-            db.update(TABLE_CLEFS,valeurs,COLONNE_ID+"=?",new String[]{String.valueOf(o.getId())});
+            db.update(TABLE_CLEFS,valeurs,COLONNE_ID+" = ?",new String[]{String.valueOf(o.getId())});
             list.put(true,null);
             return list;
         } catch (Exception e) {
@@ -100,7 +100,6 @@ public class BaseClefs extends SQLiteOpenHelper implements DAOinterface<Clefs> {
             list.put(false,e);
             return list;
         }
-
 
     }
 
