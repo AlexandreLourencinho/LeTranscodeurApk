@@ -63,5 +63,15 @@
                 android:text="@string/supprimer" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:background="@drawable/fondbordures"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:text="@string/messageGestionClefs"
+            android:textSize="18dp" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

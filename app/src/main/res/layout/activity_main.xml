@@ -7,8 +7,8 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="400dp"
+        android:layout_height="523dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -22,25 +22,23 @@
         <ImageView
             android:id="@+id/logoApp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/logo_transcodeur" />
+            android:layout_height="435dp"
+            app:srcCompat="@drawable/logotranscode" />
 
         <TextView
             android:id="@+id/textAcc"
-            android:layout_width="match_parent"
-            android:layout_height="47dp"
+            android:layout_width="382dp"
+            android:layout_height="wrap_content"
             android:gravity="end"
             android:text="@string/loualInd"
-            android:textSize="32sp"
-            />
+            android:textSize="32sp" />
 
         <TextView
             android:id="@+id/trns_logo"
-            android:gravity="end"
-            android:layout_width="match_parent"
+            android:layout_width="389dp"
             android:layout_height="wrap_content"
+            android:gravity="end"
             android:text="@string/trns_logo"
-            android:textSize="32sp"
-            />
+            android:textSize="32sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

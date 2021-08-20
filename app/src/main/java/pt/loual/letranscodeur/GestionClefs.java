@@ -139,10 +139,14 @@ public class GestionClefs extends AppCompatActivity
 
                 BaseClefs bdd = new BaseClefs(this);//
                 Clefs clef = new Clefs();
+                Clefs clefRecup = (Clefs) spinnerDesClefs.getSelectedItem();
+                int id = clefRecup.getId();
+                clef.setId(id);
                 clef.setNom(nomDeLaClef.getText().toString());
                 clef.setContenu(contenuDeLaClef.getText().toString());
 //                System.out.println(clef.getId());
                 HashMap<Boolean,Object> resultat = bdd.modifier(clef);
+                bdd.close();
                 if(resultat.get(false)!=null){
                     test.alerteuh(GestionClefs.this,R.string.titreErreurModif,R.string.messageErreurModif,R.string.OK);
                 }else{
@@ -167,6 +171,7 @@ public class GestionClefs extends AppCompatActivity
             BaseClefs bdd = new BaseClefs(this);//
             Clefs clef = (Clefs)spinnerDesClefs.getSelectedItem();
             HashMap<Boolean,Object> resultat = bdd.supprimer(clef);
+            bdd.close();
             if(resultat.get(false)!=null){
                 Outils outil = new Outils();
                 outil.alerteuh(GestionClefs.this,R.string.titreErreurSuppression,R.string.messageErreurSuppression,R.string.OK);

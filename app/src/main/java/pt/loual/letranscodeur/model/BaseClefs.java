@@ -27,7 +27,7 @@ public class BaseClefs extends SQLiteOpenHelper implements DAOinterface<Clefs> {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE "+TABLE_CLEFS+"("+COLONNE_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "
-        +COLONNE_NOM+" TEXT UNIQUE NOT NULL, "+COLONNE_CONTENU+" TEXT NOT NULL )");
+        +COLONNE_NOM+" TEXT, "+COLONNE_CONTENU+" TEXT)");
     }
 
     @Override
@@ -43,8 +43,8 @@ public class BaseClefs extends SQLiteOpenHelper implements DAOinterface<Clefs> {
         int nombre = this.compteur();
         if(nombre==0){
             GenClef keyGen = new GenClef();
-            Clefs clef0 = new Clefs(0,"Selectionnez une clef", "");
-            Clefs clef1 = new Clefs(1,"Première clef", keyGen.randomKey());
+            Clefs clef0 = new Clefs(1,"Selectionnez une clef", "");
+            Clefs clef1 = new Clefs(2,"Première clef", keyGen.randomKey());
             this.ajouter(clef0);
             this.ajouter(clef1);
         }
@@ -78,7 +78,7 @@ public class BaseClefs extends SQLiteOpenHelper implements DAOinterface<Clefs> {
             ContentValues valeurs = new ContentValues();
             valeurs.put(COLONNE_NOM,o.getNom());
             valeurs.put(COLONNE_CONTENU,o.getContenu());
-            db.update(TABLE_CLEFS,valeurs,COLONNE_ID+" = ?",new String[]{String.valueOf(o.getId())});
+            db.update(TABLE_CLEFS,valeurs,COLONNE_ID+" =? ",new String[]{String.valueOf(o.getId())});
             list.put(true,null);
             return list;
         } catch (Exception e) {

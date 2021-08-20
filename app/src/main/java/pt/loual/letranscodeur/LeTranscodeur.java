@@ -214,7 +214,7 @@ public class LeTranscodeur extends AppCompatActivity
                     } else {//
                         activer();
                         StringBuilder sb = new StringBuilder();
-                        for( String ligne : chmpCrypte.getText().toString().split("")){
+                        for( String ligne : chmpCrypte.getText().toString().split("\n")){
                             trans = new Transcodeur(chmpClef.getText().toString());//
                             sb.append(ligne);
                             chmpClair.setText(trans.decode(sb.toString()));//
