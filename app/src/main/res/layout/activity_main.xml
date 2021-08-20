@@ -21,13 +21,14 @@
 
         <ImageView
             android:id="@+id/logoApp"
-            android:layout_width="match_parent"
+            android:layout_width="370dp"
             android:layout_height="435dp"
+            android:layout_marginStart="6dp"
             app:srcCompat="@drawable/logotranscode" />
 
         <TextView
             android:id="@+id/textAcc"
-            android:layout_width="382dp"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="@string/loualInd"
@@ -35,7 +36,7 @@
 
         <TextView
             android:id="@+id/trns_logo"
-            android:layout_width="389dp"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="@string/trns_logo"
