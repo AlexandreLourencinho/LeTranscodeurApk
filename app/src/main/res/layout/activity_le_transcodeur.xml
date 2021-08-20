@@ -3,65 +3,122 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".LeTranscodeur">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="317dp"
-        android:layout_height="532dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintHorizontal_bias="0.296"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.501">
+        app:layout_constraintVertical_bias="1.0">
 
-        <Button
-            android:id="@+id/boutonGenerer"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_weight="1"
-            android:text="@string/boutonGenerer" />
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/chmpClair"
+            <Button
+                android:id="@+id/boutonGenerer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="1"
+                android:text="@string/boutonGenerer" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/fondbordures"
-            android:ems="10"
-            android:hint="@string/txt_encoder"
-            android:inputType="textMultiLine"
-            android:minHeight="48dp" />
+            android:layout_height="93dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/chmpCrypte"
-            android:layout_width="313dp"
-            android:layout_height="132dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/fondbordures"
-            android:ems="10"
-            android:hint="@string/txt_decoder"
-            android:inputType="textMultiLine"
-            android:minHeight="48dp" />
+            <EditText
+                android:id="@+id/chmpClair"
+                android:layout_width="403dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/fondbordures"
+                android:ems="10"
+                android:hint="@string/txt_encoder"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp" />
 
-        <EditText
-            android:id="@+id/chmpClef"
+            <ImageButton
+                android:id="@+id/copieClair"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:minHeight="48dp"
+                android:onClick="copierClair"
+                app:srcCompat="?attr/actionModeCopyDrawable"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/chmpCrypte"
+                android:layout_width="403dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/fondbordures"
+                android:ems="10"
+                android:hint="@string/txt_decoder"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp" />
+
+            <ImageButton
+                android:id="@+id/copieCrypte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="0dp"
+                android:minHeight="48dp"
+                android:onClick="copierCrypte"
+                app:srcCompat="?attr/actionModeCopyDrawable"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/fondbordures"
-            android:ems="10"
-            android:hint="@string/txt_clef"
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/chmpClef"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/fondbordures"
+                android:ems="10"
+                android:hint="@string/txt_clef"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+            <ImageButton
+                android:id="@+id/copieClef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:baselineAlignBottom="false"
+                android:minHeight="48dp"
+                android:onClick="copierClef"
+                app:srcCompat="?attr/actionModeCopyDrawable"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -85,51 +142,6 @@
 
         </LinearLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="50dp"
-        android:layout_height="407dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.597"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675">
-
-        <ImageButton
-            android:id="@+id/copieClair"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="92dp"
-            android:minHeight="48dp"
-            android:onClick="copierClair"
-            app:srcCompat="?attr/actionModeCopyDrawable"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/copieCrypte"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="4dp"
-            android:minHeight="48dp"
-            android:onClick="copierCrypte"
-            app:srcCompat="?attr/actionModeCopyDrawable"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/copieClef"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:baselineAlignBottom="false"
-            android:minHeight="48dp"
-            android:onClick="copierClef"
-            app:srcCompat="?attr/actionModeCopyDrawable"
-            tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
