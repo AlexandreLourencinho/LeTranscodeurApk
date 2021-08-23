@@ -48,7 +48,8 @@
     <string name="messageErreurSuppression">Il y a eu une erreur lors de la tentative de supression.</string>
     <string name="titreSuppressionReussie">Suppression de la clef réussie!</string>
     <string name="messageSuppressionReussie">Vous avez supprimé la clef !</string>
-    <string name="messageGestionClefs">Ici, vous pouvez gérer vos clefs. Les modifier, les supprimer. Attention néanmoins lors de la modification : les clefs pourraient ne plus fonctionner.</string>
+    <string name="messageGestionClefs">Ici, vous pouvez gérer vos clefs. Les modifier, les supprimer.Attention à la modification pouvant rendre vos clefs inutilisables.
+        \/!\\ Si le bouton modifier est grisé, que la clef n\'est pas valide.\/!\\</string>
     <!--            <string name=""></string>-->
     <!--            <string name=""></string>-->
     <!--        <string name=""></string>-->
