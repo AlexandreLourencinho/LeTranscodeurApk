@@ -1,8 +1,8 @@
 # LeTranscodeurApk
 <p align="center">
 <img src = https://github.com/AlexandreLourencinho/LeTranscodeurApk/blob/master/images/img1.png width=250 ></p>
-## Bienvenue sur la version Mobile de cet exercice que nous avons réalisé lors de l'évaluation Java : 
- # Le Transcodeur !
+Bienvenue sur la version Mobile de cet exercice que nous avons réalisé lors de l'évaluation Java : 
+Le Transcodeur !
  
  Il s'agit ici d'une petite application permettant de coder ou de décoder des messages en utilisant une clef de chiffrement.
  L'encodage se base sur une variante du code César, rien de très complexe ni très inviolable, mais l'idée était ici de pouvoir réussir 
