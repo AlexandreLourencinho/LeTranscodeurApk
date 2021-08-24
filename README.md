@@ -18,7 +18,7 @@ Vous devrez, pour utiliser l'encodage et le décodage de message, commencer par 
   <p align="center">
 <img src = https://github.com/AlexandreLourencinho/LeTranscodeurApk/blob/master/images/img4.png width=250 ></p>
 Dès que vous aurez votre clef dans le champ correspondant tout en bas, Ecrivez dans le premier champ, et vous récupérez dans celui du dessous le message codé.
-Les boutons "copy to clipboard" fonctionnent et vous permettent de copier tout un champ - message clair, codé ou la clef - plus facilement.
+Les boutons "copy to clipboard" fonctionnent et vous permettent de copier tout un champ - message clair, codé ou la clef - plus facilement. La disquette vous permet de sauvegarder les clefs que vous désirez conserver.
 
    <p align="center">
 <img src = https://github.com/AlexandreLourencinho/LeTranscodeurApk/blob/master/images/img5.png width=250 ></p>
