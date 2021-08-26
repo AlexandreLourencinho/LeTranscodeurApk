@@ -1,5 +1,7 @@
 package pt.loual.letranscodeur.model;
 
+import androidx.annotation.NonNull;
+
 public class Clefs {
 
 
@@ -45,6 +47,7 @@ public class Clefs {
         this.contenu = contenu;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return this.nom;
