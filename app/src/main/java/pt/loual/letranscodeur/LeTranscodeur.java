@@ -12,21 +12,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.widget.TooltipCompat;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
-
 import pt.loual.letranscodeur.model.BaseClefs;
 import pt.loual.letranscodeur.model.BoiteAEncryptage;
 import pt.loual.letranscodeur.model.Clefs;
@@ -35,7 +28,8 @@ import pt.loual.letranscodeur.outils.GenClef;
 import pt.loual.letranscodeur.outils.Transcodeur;
 
 
-public class LeTranscodeur extends AppCompatActivity implements View.OnClickListener {
+public class LeTranscodeur extends AppCompatActivity implements View.OnClickListener
+{
 
     //--------------------------------------------------------------------------------------------||
     // --------------- Déclaration centralisée des éléments utilisés dans la classe --------------||
@@ -56,14 +50,17 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
     //**************************fin déclaration éléments de la classe ****************************||
 
 
-    /**-------------------------------------------------------------------------------------------||
-     *  ------------------ Méthode permettant la gestion du menu 3 points ------------------------||
+    /**
+     * -------------------------------------------------------------------------------------------||
+     * ------------------ Méthode permettant la gestion du menu 3 points ------------------------||
+     *
      * @param menu Le menu 3 points en question
      * @return un booléen
      * -------------------------------------------------------------------------------------------||
      */
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         gestionClefs = findViewById(R.id.gestionClefs);
@@ -72,15 +69,18 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
     //**************************fin gestion menu 3 points ****************************************||
 
 
-    /**-------------------------------------------------------------------------------------------||
+    /**
+     * -------------------------------------------------------------------------------------------||
      * ---- Méthode permettant la gestion des actions quand une option du menu est séléctionnée --||
+     *
      * @param item un paramètre MenuItem
      * @return un booléen
      * -------------------------------------------------------------------------------------------||
      */
     @SuppressLint("NonConstantResourceId")
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         switch (item.getItemId()) {
             case R.id.gestionClefs:
                 Intent intent = new Intent(LeTranscodeur.this, GestionClefs.class);
@@ -94,12 +94,13 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
 
 
     /**-------------------------------------------------------------------------------------------||
-     *  -------------------- Méthode oncreate de l'activité --------------------------------------||
+     * --------------------- Méthode oncreate de l'activité --------------------------------------||
      * @param savedInstanceState bundle obligatoire du oncreate de l'activité
      * -------------------------------------------------------------------------------------------||
      */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         Outils outils = new Outils();
 
         super.onCreate(savedInstanceState);
@@ -170,11 +171,12 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)
             {
-                checkClefVide(chmpClair,chmpCrypte);
+                checkClefVide(chmpClair, chmpCrypte);
             }
 
             @Override
-            public void afterTextChanged(Editable editable) {
+            public void afterTextChanged(Editable editable)
+            {
 
             }
         });
@@ -184,16 +186,19 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
         //----------------------------------------------------------------------------------------||
         // -------------------- Listener sur le champ du texte codé ------------------------------||
         //----------------------------------------------------------------------------------------||
-        chmpCrypte.addTextChangedListener(new TextWatcher() {
+        chmpCrypte.addTextChangedListener(new TextWatcher()
+        {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
+            {
 
             }
 
             // *** sujr le changement de texte, vérifie si la clef est bien présente ***
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override//
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {//
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)
+            {//
 //                if (chmpCrypte.isFocused()) {
 //                    if (chmpClef.getText().toString().equals("")) {
 //                        desactiver();
@@ -208,11 +213,12 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
 //
 //                    }
 //                }
-                checkClefVide(chmpCrypte,chmpClair);
+                checkClefVide(chmpCrypte, chmpClair);
             }
 
             @Override
-            public void afterTextChanged(Editable editable) {
+            public void afterTextChanged(Editable editable)
+            {
 
             }
         });
@@ -222,9 +228,11 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
         //----------------------------------------------------------------------------------------||
         // -------------- Listener sur le champ du champ texte de la clef ------------------------||
         //----------------------------------------------------------------------------------------||
-        chmpClef.addTextChangedListener(new TextWatcher() {
+        chmpClef.addTextChangedListener(new TextWatcher()
+        {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
+            {
 
             }
 
@@ -238,7 +246,8 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
             }
 
             @Override
-            public void afterTextChanged(Editable editable) {
+            public void afterTextChanged(Editable editable)
+            {
 
             }
         });
@@ -247,9 +256,11 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
         //----------------------------------------------------------------------------------------||
         // -------------- listener sur la séléction d'objet dans le spinner ----------------------||
         //----------------------------------------------------------------------------------------||
-        spinnerClefs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerClefs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
                 if (i == 0) {
                     chmpClef.setText("");
                 } else {
@@ -259,7 +270,8 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
                 chmpClef.setText("");
             }
         });
@@ -272,7 +284,8 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
     //--------------------------------------------------------------------------------------------||
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
-    public void onClick(View view) {
+    public void onClick(View view)
+    {
         Outils copier = new Outils();
 
         switch (view.getId()) {
@@ -282,16 +295,16 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
             case (R.id.boutonGenerer):
                 genererClef();
                 break;
-            case(R.id.boutonSauver):
+            case (R.id.boutonSauver):
                 sauverClef();
                 break;
-            case(R.id.copieClair) :
+            case (R.id.copieClair):
                 copier.copierText(LeTranscodeur.this, chmpClair);
                 break;
-            case(R.id.copieCrypte):
+            case (R.id.copieCrypte):
                 copier.copierText(LeTranscodeur.this, chmpCrypte);
                 break;
-            case(R.id.copieClef):
+            case (R.id.copieClef):
                 copier.copierText(LeTranscodeur.this, chmpClef);
                 break;
         }
@@ -299,11 +312,13 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
     //***************************fin de la fonction onclick **************************************||
 
 
-    /**-------------------------------------------------------------------------------------------||
+    /**
+     * -------------------------------------------------------------------------------------------||
      * -----------------méthode pour les textchangelistener : verrouille, encode -----------------||
      * -------------------------------------ou décode---------------------------------------------||
+     *
      * @param champsPremier l'editText qui sera focus et dont le texte sera récupéré
-     * @param champSecond l'EditTexte qui recevra le codage ou le décodage
+     * @param champSecond   l'EditTexte qui recevra le codage ou le décodage
      */
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void checkClefVide(EditText champsPremier, EditText champSecond)
@@ -311,19 +326,17 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
         if (champsPremier.isFocused()) {
             if (chmpClef.getText().toString().equals("")) {
                 activerOuDesactiver();
-            }
-            else {
+            } else {
                 activerOuDesactiver();
                 StringBuilder sb = new StringBuilder();
                 for (String ligne : champsPremier.getText().toString().split("\n")) {
                     trans = new Transcodeur(chmpClef.getText().toString());
                     sb.append(ligne);
-                    if(champSecond.getId()==R.id.chmpCrypte){
+                    if (champSecond.getId() == R.id.chmpCrypte) {
                         champSecond.setText(trans.encode(sb.toString()));
-                    }else if (champSecond.getId()==R.id.chmpClair){
+                    } else if (champSecond.getId() == R.id.chmpClair) {
                         champSecond.setText(trans.decode(sb.toString()));
                     }
-
                 }
             }
         }
@@ -331,24 +344,28 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
     //*********************fin de la méthode de vérification de présence de clef *****************||
 
 
-    /**-------------------------------------------------------------------------------------------||
+    /**
+     * -------------------------------------------------------------------------------------------||
      * ------------------méthode permettant de générer une clef de transcodeur -------------------||
      * -------------------------------------------------------------------------------------------||
      */
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void genererClef() {
+    public void genererClef()
+    {
         genClef = new GenClef();
         chmpClef.setText(BoiteAEncryptage.encrypt(genClef.randomKey()));
     }
     //************************fin de la méthode de création de clef ******************************||
 
 
-    /**-------------------------------------------------------------------------------------------||
+    /**
+     * -------------------------------------------------------------------------------------------||
      * ------------------------Méthode permettant de lancer la sauvegarde de clefs----------------||
      * -------------------------------------------------------------------------------------------||
      */
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void sauverClef() {
+    public void sauverClef()
+    {
         if (chmpClef.getText().toString().equals("")) {
             // *** si le champ de la clef est vide  ***
             Outils alerte = new Outils();
@@ -361,7 +378,8 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
             if (!test.testClef(chmpClef.getText().toString())) {
                 // *** si la clef ne passe pas le test de validité ***
                 Outils alerte = new Outils();
-                alerte.alerteuh(LeTranscodeur.this, R.string.titreClefInvalide, R.string.messageClefInvalide, R.string.OK);
+                alerte.alerteuh(LeTranscodeur.this, R.string.titreClefInvalide,
+                        R.string.messageClefInvalide, R.string.OK);
                 // ***     -----     -----     -----    -----      ***
             } else {
                 // *** si la clef passe le test de validité ***
@@ -378,7 +396,8 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
                                 // *** pop d'une alerte rappelant que le nom est obligatoire
                                 // *** puis retour au début de la fonction afin de redemander un nom
                                 dialogInterface.dismiss();
-                                AlertDialog.Builder alert = new AlertDialog.Builder(LeTranscodeur.this);
+                                AlertDialog.Builder alert = new AlertDialog.Builder(
+                                        LeTranscodeur.this);
                                 alert.setTitle(R.string.titreNomVide)
                                         .setMessage(R.string.nomVide)
                                         .setPositiveButton(R.string.OK, (dialogInterface1, i1) ->
@@ -403,12 +422,16 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
                                     dialogInterface.dismiss();
                                     System.out.println(resultat.get(false).toString());
                                     Outils alarme = new Outils();
-                                    alarme.alerteuh(LeTranscodeur.this, R.string.titreErreurInsertion, R.string.erreurInsertion, R.string.OK);
+                                    alarme.alerteuh(LeTranscodeur.this,
+                                            R.string.titreErreurInsertion, R.string.erreurInsertion,
+                                            R.string.OK);
                                     // *** -----    -----     -----    -----    -----    -----   --
                                 } else {
                                     // *** sinon, la clef à bien été ajoutée , alerte avec la confirmation de l'ajout
                                     Outils alarme = new Outils();
-                                    alarme.alerteuh(LeTranscodeur.this, R.string.titreReussiteInsertion, R.string.reussiteInsertion, R.string.OK);
+                                    alarme.alerteuh(LeTranscodeur.this,
+                                            R.string.titreReussiteInsertion,
+                                            R.string.reussiteInsertion, R.string.OK);
                                     // *** mise à jour du menu déroulant / spinner
                                     alarme.menuSelection(spinnerClefs, LeTranscodeur.this);
                                     // ***   -----     -----    ------     -----     -----    ------
@@ -416,7 +439,8 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
                             }
                         })
                         // *** si bouton annulé => simplement fermeture de l'alerte
-                        .setNegativeButton(R.string.annuler, (dialogInterface, i) -> dialogInterface.dismiss())
+                        .setNegativeButton(R.string.annuler,
+                                (dialogInterface, i) -> dialogInterface.dismiss())
                         .show();
             }
             // *** -----     ------      -----     -----     ------    ------    -----    -----  ***
@@ -425,14 +449,17 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
     //*****************************fin de la méthode de sauvegarde de clef ***********************||
 
 
-    /**-------------------------------------------------------------------------------------------||
+    /**
+     * -------------------------------------------------------------------------------------------||
      * ----------------- Méthode permettant d'activer ou désactiver les champs  ------------------||
      * -------------------------------------------------------------------------------------------||
      */
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void activerOuDesactiver() {
+    public void activerOuDesactiver()
+    {
         Outils test = new Outils();
-        if (chmpClef.getText().toString().equals("") || !test.testClef(chmpClef.getText().toString())) {
+        if (chmpClef.getText().toString().equals("") || !test.testClef(
+                chmpClef.getText().toString())) {
             chmpClair.setEnabled(false);
             chmpClair.setBackgroundResource(R.color.grey_200);
             chmpCrypte.setEnabled(false);
@@ -447,12 +474,12 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
             chmpCrypte.setHint(R.string.vide);
             chmpClair.setHint(R.string.vide);
         }
-
     }
     //**********************fin de la méthode activer / désactiver champs ************************||
 
 
-    /**-------------------------------------------------------------------------------------------||
+    /**
+     * -------------------------------------------------------------------------------------------||
      * -------------------------méthode testant la validité de la clef----------------------------||
      * -------------------------------------------------------------------------------------------||
      */
@@ -471,12 +498,12 @@ public class LeTranscodeur extends AppCompatActivity implements View.OnClickList
                 AlertDialog.Builder alaaarm = new AlertDialog.Builder(LeTranscodeur.this);
                 alaaarm.setTitle(R.string.titreClefInvalide)
                         .setMessage(R.string.messageClefInvalide)
-                        .setNeutralButton(R.string.OK, (dialogInterface, i) -> dialogInterface.dismiss())
+                        .setNeutralButton(R.string.OK,
+                                (dialogInterface, i) -> dialogInterface.dismiss())
                         .show();
             }
         }
     }
     //************************fin de la méthode de test de la validité de la clef ****************||
-
-
 }
+// ************************** fin de la classe ***************************************************||
