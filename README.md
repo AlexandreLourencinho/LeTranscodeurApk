@@ -31,3 +31,6 @@ Le menu 3 points en haut à droite vous permet d'avoir accès à la gestion des 
 Une release est disponible ici : 
 https://github.com/AlexandreLourencinho/LeTranscodeurApk/releases/tag/1.0
 si vous voulez utiliser ou tester le transcodeur mobile!
+
+
+une grande partie de l'interface utilisateur est, d'après moi, à revoir, et j'ai pour projet de refaire cette application et de rajouter énormément de fonctions, en suivant mon évolution de mon apprentissage du JEE, des interfaces, afin de pouvoir la rendre bien plus modulable.
